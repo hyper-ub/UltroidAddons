@@ -228,6 +228,8 @@ async def mms(event):
     os.remove(pic)
 
 
+ fnt = "./tg_bot/resources/impact.ttf"
+
 async def draw_meme(image_path, msg):
     img = Image.open(image_path)
     os.remove(image_path)
@@ -243,9 +245,7 @@ async def draw_meme(image_path, msg):
         upper_text = text
         lower_text = ""
     draw = ImageDraw.Draw(img)
-    m_font = ImageFont.truetype(
-        f"resources/fonts/{font}.ttf", int((70 / 640) * i_width)
-    )
+    m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     current_h, pad = 10, 5
     if upper_text:
         for u_text in textwrap.wrap(upper_text, width=15):
